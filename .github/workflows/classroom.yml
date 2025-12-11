@@ -39,4 +39,4 @@ jobs:
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       with:
-        runners: exam-evaluator
+        runners: "exam-evaluator"
