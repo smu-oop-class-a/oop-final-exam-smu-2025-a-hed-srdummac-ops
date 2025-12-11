@@ -1,12 +1,18 @@
-﻿namespace OOP.FinalTerm.Exam.Model
+﻿using SQLite;
+
+namespace OOP.FinalTerm.Exam.Model
 {
     //TODO: Students will implement the DirectorModel class with properties as per requirements
     //Inherit PersonModel
     //PersonModel must be created first if not already present
-    public class DirectorModel
+    public class DirectorModel : PersonModel
     {
         //add properties here
         //refer to README.md for property details
         //refer to MovieModel for guidance
+
+        [PrimaryKey, AutoIncrement]
+        public int Genre { get; set; }
+        public string TotalMoviesCreated { get; set; }
     }
 }

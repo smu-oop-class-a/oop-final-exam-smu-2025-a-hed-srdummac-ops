@@ -52,6 +52,12 @@ namespace OOP.FinalTerm.Exam.Views
             // _director.Genres = txtGenres.Text;
             // _director.TotalMoviesCreated = (int)numTotalMovies.Value;
 
+            //Add
+            _director.FirstName = txtFirstName.Text;
+            _director.LastName = txtLastName.Text;
+            _director.Genres = txtGenres.Text;
+            _director.TotalMoviesCreated = (int)numTotalMovies.Value;
+            //return _director;
             return _director;
         }
 
@@ -74,6 +80,23 @@ namespace OOP.FinalTerm.Exam.Views
             //     txtLastName.Focus();
             //     return;
             // }
+
+            // Add
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text))
+            {
+                MessageBox.Show("First Name is required.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtFirstName.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtLastName.Text))
+            {
+                MessageBox.Show("Last Name is required.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLastName.Focus();
+                return;
+            }
 
             _directorRepository.AddDirector(GetDirector());
 
